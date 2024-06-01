@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <title>Form Pembelian</title>
+    <style>
+        body {
+            font-family: 'Kanit', sans-serif;
+            background-image: url('https://i.pinimg.com/736x/83/61/7c/83617c72a1919283f2ca01869e381512.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .form-container {
+            background: rgba(255, 255, 255, 0.9); /* Add a background color to ensure visibility */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+        }
+        .form-container .header, .form-container form {
+            padding: 20px;
+            border-radius: 8px;
+        }
+        /*For button submit*/
+        button[type="submit"] {
+            background-color: rgb(167, 149, 166);
+            color: whitesmoke;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer; /* Changes cursor to pointer on hover */
+        }
+        button[type="submit"]:hover {
+            background-color: #f0f8ff; /* Lighter azure on hover */
+        }
+    </style>
+</head>
+<body>
+    <!-- NavBar  -->
+    <nav class="navbar navbar-expand-lg navbar-light shadow-sm" style="background-color: #F1E4E9;">
+        <div class="container-fluid">
+            <span class="navbar-text me-auto" id="current-time"></span>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText"></div>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <script>
+        function showTime() {
+            var date = new Date();
+            var hours = date.getHours();
+            var greeting = "";
+            if (hours < 12) {
+                greeting = "Good Morning";
+            } else if (hours < 18) {
+                greeting = "Good Afternoon";
+            } else {
+                greeting = "Good Evening";
+            }
+            document.getElementById("current-time").innerText = greeting + ", " + getCurrentTime();
+            setTimeout(showTime, 1000);
+        }
+    
+        function getCurrentTime() {
+            var date = new Date();
+            var hours = date.getHours().toString().padStart(2, '0');
+            var minutes = date.getMinutes().toString().padStart(2, '0');
+            var seconds = date.getSeconds().toString().padStart(2, '0');
+            return hours + ":" + minutes + ":" + seconds;
+        }
+    
+        window.onload = function () {
+            showTime();
+        };
+    </script>
+    <!-- NavBar  -->
+    
+    <!--Form Pendaftaran Start-->
+    <div class="container d-flex justify-content-center">
+        <div class="form-container">
+            <div class="header">
+                <h3 class="text-center"><u>Purchase Page</u></h3>
+            </div>
+            <form action="" onsubmit="return kirimdata(event)">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="name" class="font-weight-bold">Name</label>
+                            <input type="text" class="form-control" placeholder="Your name" id="name">
+                        </div>
+                        <label for="specialization" class="font-weight-bold">Product Type</label>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" name="specialization" id="iphone" value="iPhone">
+                            <label class="form-check-label" for="iphone">iPhone</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" name="specialization" id="iwatch" value="iWatch">
+                            <label class="form-check-label" for="iwatch">iWatch</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" name="specialization" id="ipad" value="iPad">
+                            <label class="form-check-label" for="ipad">iPad</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" name="specialization" id="macbook" value="Macbook">
+                            <label class="form-check-label" for="macbook">Macbook</label>
+                        </div>
+                        <div class="form-group">
+                            <label for="classof" class="font-weight-bold">Detail Product</label>
+                            <select name="classof" id="classof" class="form-control">
+                                <option value="iPhone 15 Pro Max">iPhone 15 Pro Max</option>
+                                <option value="iPhone 15 Pro">iPhone 15 Pro</option>
+                                <option value="iPhone 15 Plus">iPhone 15 Plus</option>
+                                <option value="iPhone 15">iPhone 15</option>
+                                <option value="Apple Watch Series 9">Apple Watch Series 9</option>
+                                <option value="Apple Watch SE 2nd Gen">Apple Watch SE 2nd Gen</option>
+                                <option value="Apple Watch Ultra">Apple Watch Ultra</option>
+                                <option value="Apple Watch Series 3">Apple Watch Series 3</option>
+                                <option value="iPad Pro Gen 4">iPad Pro Gen 4</option>
+                                <option value="iPad Pro Gen 5">iPad Pro Gen 5</option>
+                                <option value="iPad Pro M1">iPad Pro M1</option>
+                                <option value="iPad 10">iPad 10</option>
+                                <option value="Macbook Air M2 2023">Macbook Air M2 2023</option>
+                                <option value="Macbook Air M1 2020">Macbook Air M1 2020</option>
+                                <option value="Macbook Pro M3 14 inch">Macbook Pro M3 14 inch</option>
+                                <option value="Macbook Pro M2 14 inch">Macbook Pro M2 14 inch</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="color" class="font-weight-bold">Color</label>
+                            <input type="text" class="form-control" placeholder="color you choose" id="color">
+                        </div>
+                        <div class="form-group">
+                            <label for="storage" class="font-weight-bold">Storage / Size</label>
+                            <input type="text" class="form-control" placeholder="storage or size you choose" id="storage">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="birthdate" class="font-weight-bold">Purchase Date</label>
+                            <input type="text" class="form-control" id="birthdate" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone" class="font-weight-bold">Phone Number</label>
+                            <input type="text" class="form-control" placeholder="Your Phone Number" id="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="quantity" class="font-weight-bold">Quantity</label>
+                            <input type="text" class="form-control" placeholder="lots of products" id="quantity">
+                        </div>
+                        <div class="form-group">
+                            <label for="address" class="font-weight-bold">Address</label>
+                            <textarea placeholder="Type your address here" name="address" id="address" class="form-control" rows="5"></textarea>
+                        </div>                       
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Send</button>
+            </form>
+        </div>
+    </div>
+    <!--Form Pendaftaran End-->
+
+  <!-- Footer  -->
+  <footer class="text-light" style="background-color: #F1E4E9;">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="text-center py-3">
+            <p class="text-dark">Copyright &copy; ulfhiraa</p>
+            <p>
+              <!-- Tautan dan gambar untuk Instagram -->
+              <a href="https://www.instagram.com/ulfhiraa/" target="_blank">
+                <img src="img/instagram.png" alt="Instagram" width="30" height="30">
+              </a>
+              <!-- Tautan dan gambar untuk GitHub -->
+              <a href="https://github.com/ulfhiraa" target="_blank">
+                <img src="img/github.png" alt="GitHub" width="30" height="30">
+              </a>
+              <!-- Tautan dan gambar untuk LinkedIn -->
+              <a href="https://www.linkedin.com/in/ulfhiraa/" target="_blank">
+                <img src="img/linkedin.png" alt="LinkedIn" width="30" height="30">
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer> 
+  <!-- Footer  -->
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            flatpickr("#birthdate", {
+                dateFormat: "d-m-Y",
+                allowInput: true
+            });
+        });
+
+        function kirimdata(event) {
+            event.preventDefault();
+
+            var name = document.getElementById('name').value;
+            var purchaseDate = document.getElementById('birthdate').value;
+            var phone = document.getElementById('phone').value;
+            var product = document.querySelector('input[name="specialization"]:checked').value;
+            var detailProduct = document.getElementById('classof').value;
+            var color = document.getElementById('color').value;
+            var storage = document.getElementById('storage').value;
+            var quantity = document.getElementById('quantity').value;
+            var address = document.getElementById('address').value;
+
+            alert(
+                'Name: ' + name + '\n' +
+                'Purchase Date: ' + purchaseDate + '\n' +
+                'Phone: ' + phone + '\n' +
+                'Product: ' + product + '\n' +
+                'Detail Product: ' + detailProduct + '\n' +
+                'Color: ' + color + '\n' +
+                'Storage: ' + storage + '\n' +
+                'Quantity: ' + quantity + '\n' +
+                'Address: ' + address
+            );
+        }
+    </script>
+</body>
+</html>

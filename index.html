@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 2 | 093 | B</title>
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+25+Charted&display=swap" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <style>
+        body {
+            /*background-image: url(https://i.pinimg.com/564x/09/85/c5/0985c533f80fae666eb7ab1d7ed0b6b8.jpg);*/
+            background-color: #faf1f4;
+        }
+        .navbar-text img {
+            margin-right: 10px;
+            height: 30px;
+        }
+
+        .background-text-center p {
+            font-weight: bold;
+            color:azure;
+        }
+
+        .background-text-center .welcome {
+            font-size: 40px;
+            color: black;
+            font-family: "Jersey 25 Charted", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .background-text-center .thanks {
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+   <!-- Topbar Start -->
+    <nav class="navbar navbar-expand-lg navbar-light shadow-sm" style="background-color: #F1E4E9;">
+        <div class="container-fluid">
+            <span class="navbar-text d-flex align-items-center">
+                <div class="col-md-6 px-xl-0 text-center text-md-left"> <!-- Mengubah text-align menjadi text-center untuk posisi center pada mobile -->
+                    <img class="img-fluid logo" src="img/apple.png" alt="Apple Logo" style="max-width: 50px;"> <!-- Menambahkan kelas logo dan menetapkan ukuran maksimum untuk logo -->
+                </div>
+                <span id="current-time" class="ms-3 me-auto"></span> <!-- Mengatur margin kiri menggunakan ms-3 agar jarak antara logo dan waktu terkini -->
+            </span>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="iPhone.html">iPhone</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="iWatch.html">iWatch</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="iPad.html">iPad</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Mac.html">Macbook</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        function showTime() {
+            var date = new Date();
+            var hours = date.getHours();
+            var greeting = "";
+            if (hours < 12) {
+                greeting = "Good Morning";
+            } else if (hours < 18) {
+                greeting = "Good Afternoon";
+            } else {
+                greeting = "Good Evening";
+            }
+            document.getElementById("current-time").innerText = greeting + ", " + getCurrentTime();
+            setTimeout(showTime, 1000);
+        }
+
+        function getCurrentTime() {
+            var date = new Date();
+            var hours = date.getHours().toString().padStart(2, '0');
+            var minutes = date.getMinutes().toString().padStart(2, '0');
+            var seconds = date.getSeconds().toString().padStart(2, '0');
+            return hours + ":" + minutes + ":" + seconds;
+        }
+
+        window.onload = function () {
+            showTime();
+        };
+    </script>
+    <!-- Topbar End -->
+
+    <!--Carousel start-->
+    <div class="background-text-center text-center">
+        <p class="welcome">Selamat datang di website resmi GawaiID</p>
+        <!--<p class="thanks">Terima kasih sudah berkunjung!</p>-->
+    </div>    
+
+    <p class="text-center" style="font-weight: 10px; font-style:italic;">
+        Tersedia berbagai produk Apple seperti iPhone, iPad, iWatch dan Macbook.
+    </p>
+    <p class="text-center" style="font-weight: 10px; font-style:italic;">
+        Terima kasih sudah berkunjung, Selamat berbelanja! >_<
+    </p>
+
+    <div class="container-fluid mb-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-9">
+                <div id="header-carousel" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active" style="height: 410px;">
+                            <img class="img-fluid d-block mx-auto" src="https://glints.com/id/lowongan/wp-content/uploads/2022/04/iklan-iPhone.jpg" alt="Image" style="max-width: 100%; max-height: 100%;">
+                            <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                                <div class="p-3" style="max-width: 500px;">
+                                    <a href="" class="btn btn-light py-2 px-3">Shop Now</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item" style="height: 410px;">
+                            <img class="img-fluid d-block mx-auto" src="https://asset-a.grid.id/crop/0x0:0x0/x/photo/2019/10/28/2536139350.jpg" alt="Image" style="max-width: 100%; max-height: 100%;">
+                            <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                                <div class="p-3" style="max-width: 500px;">
+                                    <a href="" class="btn btn-light py-2 px-3">Shop Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#header-carousel" data-slide="prev">
+                        <div class="btn btn-dark" style="width: 45px; height: 45px;">
+                            <span class="carousel-control-prev-icon mb-n2"></span>
+                        </div>
+                    </a>
+                    <a class="carousel-control-next" href="#header-carousel" data-slide="next">
+                        <div class="btn btn-dark" style="width: 45px; height: 45px;">
+                            <span class="carousel-control-next-icon mb-n2"></span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Carousel End-->
+
+     <!-- Footer  -->
+    <footer class="text-light" style="background-color: #F1E4E9;">
+        <div class="container">
+        <div class="row">
+            <div class="col-12">
+            <div class="text-center py-3">
+                <p class="text-dark">Copyright &copy; ulfhiraa</p>
+                <p>
+                <!-- Tautan dan gambar untuk Instagram -->
+                <a href="https://www.instagram.com/ulfhiraa/" target="_blank">
+                    <img src="img/instagram.png" alt="Instagram" width="30" height="30">
+                </a>
+                <!-- Tautan dan gambar untuk GitHub -->
+                <a href="https://github.com/ulfhiraa" target="_blank">
+                    <img src="img/github.png" alt="GitHub" width="30" height="30">
+                </a>
+                <!-- Tautan dan gambar untuk LinkedIn -->
+                <a href="https://www.linkedin.com/in/ulfhiraa/" target="_blank">
+                    <img src="img/linkedin.png" alt="LinkedIn" width="30" height="30">
+                </a>
+                </p>
+            </div>
+            </div>
+        </div>
+        </div>
+    </footer> 
+    <!-- Footer  -->  
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iWatch - GawaiID</title>
+
+    
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <style>
+        body {
+            /*background-image: url(https://i.pinimg.com/564x/09/85/c5/0985c533f80fae666eb7ab1d7ed0b6b8.jpg);*/
+            background-color: #faf1f4;
+        }
+    </style>
+</head>
+<body>
+    <!-- Topbar Start -->
+    <nav class="navbar navbar-expand-lg navbar-light shadow-sm" style="background-color: #F1E4E9;">
+        <div class="container-fluid">
+            <span class="navbar-text me-auto" id="current-time"></span>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        function showTime() {
+            var date = new Date();
+            var hours = date.getHours();
+            var greeting = "";
+            if (hours < 12) {
+                greeting = "Good Morning";
+            } else if (hours < 18) {
+                greeting = "Good Afternoon";
+            } else {
+                greeting = "Good Evening";
+            }
+            document.getElementById("current-time").innerText = greeting + ", " + getCurrentTime();
+            setTimeout(showTime, 1000);
+        }
+
+        function getCurrentTime() {
+            var date = new Date();
+            var hours = date.getHours().toString().padStart(2, '0');
+            var minutes = date.getMinutes().toString().padStart(2, '0');
+            var seconds = date.getSeconds().toString().padStart(2, '0');
+            return hours + ":" + minutes + ":" + seconds;
+        }
+
+        window.onload = function () {
+            showTime();
+        };
+    </script>
+    <!-- Topbar End -->
+
+    <!-- Products Start -->
+    <div class="container-fluid pt-5">
+        <div class="row px-xl-5 pb-3">
+            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+                <div class="card product-item border-0 mb-4">
+                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                        <img class="img-fluid w-100" src="https://i.pinimg.com/736x/df/49/ca/df49cae3958e96393410f8f9832c34b8.jpg" alt="">
+                    </div>
+                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                        <h6 class="text-truncate mb-3">Apple Watch Series 9 </h6>
+                        <div class="d-flex justify-content-center">
+                            <h6>Rp 7.999.000</h6>
+                        </div>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between bg-light border">
+                        <a href="detail-iWatch.html" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                        <a href="form.html" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Buy</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+                <div class="card product-item border-0 mb-4">
+                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                        <img class="img-fluid w-100" src="https://i.pinimg.com/564x/d5/a4/52/d5a45267e6a92a595d07cf8d3f5530bc.jpg" alt="">
+                    </div>
+                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                        <h6 class="text-truncate mb-3">Apple Watch SE 2nd Gen</h6>
+                        <div class="d-flex justify-content-center">
+                            <h6>Rp 4.999.000</h6>
+                        </div>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between bg-light border">
+                        <a href="detail-iWatch.html" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                        <a href="form.html" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Buy</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+                <div class="card product-item border-0 mb-4">
+                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                        <img class="img-fluid w-100" src="https://i.pinimg.com/736x/75/35/03/75350349985f0ea897c66946aa9aa788.jpg" alt="">
+                    </div>
+                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                        <h6 class="text-truncate mb-3">Apple Watch Ultra</h6>
+                        <div class="d-flex justify-content-center">
+                            <h6>Rp 12.499.000</h6>
+                        </div>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between bg-light border">
+                        <a href="detail-iWatch.html" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                        <a href="form.html" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Buy</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+                <div class="card product-item border-0 mb-4">
+                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                        <img class="img-fluid w-100" src="https://i.pinimg.com/564x/ab/2f/59/ab2f599608531228d6dc70133889e49d.jpg" alt="">
+                    </div>
+                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                        <h6 class="text-truncate mb-3">Apple Watch Series 3</h6>
+                        <div class="d-flex justify-content-center">
+                            <h6>Rp 3.299.000</h6>
+                        </div>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between bg-light border">
+                        <a href="detail-iWatch.html" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                        <a href="form.html" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Buy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Products End -->
+
+
+    <footer class="text-light" style="background-color: #F1E4E9;">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                <div class="text-center py-3">
+                    <p class="text-dark">Copyright &copy; ulfhiraa</p>
+                    <p>
+                    <!-- Tautan dan gambar untuk Instagram -->
+                    <a href="https://www.instagram.com/ulfhiraa/" target="_blank">
+                        <img src="img/instagram.png" alt="Instagram" width="30" height="30">
+                    </a>
+                    <!-- Tautan dan gambar untuk GitHub -->
+                    <a href="https://github.com/ulfhiraa" target="_blank">
+                        <img src="img/github.png" alt="GitHub" width="30" height="30">
+                    </a>
+                    <!-- Tautan dan gambar untuk LinkedIn -->
+                    <a href="https://www.linkedin.com/in/ulfhiraa/" target="_blank">
+                        <img src="img/linkedin.png" alt="LinkedIn" width="30" height="30">
+                    </a>
+                    </p>
+                </div>
+                </div>
+            </div>
+        </div>
+    </footer> 
+    <!-- Footer  -->
+</body>
+</html>
+
